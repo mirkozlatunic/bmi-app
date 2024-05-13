@@ -3,7 +3,28 @@ import logo from "../assets/images/logo.svg";
 
 import "./Hero.css";
 
+const buttons = ["Metric", "Imperial"];
+const data = ["Height", "Weight"];
+
 const Hero = () => {
+  const renderButton = buttons.map((button) => {
+    return (
+      <label>
+        <input type="radio" />
+        {button}
+      </label>
+    );
+  });
+
+  const yourData = data.map((data) => {
+    return (
+      <label>
+        {data}
+        <input type="number" />
+      </label>
+    );
+  });
+
   return (
     <div className="hero__section">
       <div className="hero__section-left">
@@ -21,26 +42,8 @@ const Hero = () => {
       </div>
       <div className="hero__section-right">
         <h2 className="hero__title-modal">Enter your details below</h2>
-        <div className="hero__radio">
-          <label className="hero__label">
-            <input type="radio" value="metric" />
-            Metric
-          </label>
-          <label className="hero__label">
-            <input type="radio" value="imperial" />
-            Imperial
-          </label>
-        </div>
-        <div className="hero__input">
-          <label className="hero__label">
-            Height
-            <input type="number" value="height" />
-          </label>
-          <label className="hero__label">
-            Weight
-            <input type="number" value="weights" />
-          </label>
-        </div>
+        <div className="hero__radio">{renderButton}</div>
+        <div className="hero__input">{yourData}</div>
       </div>
     </div>
   );

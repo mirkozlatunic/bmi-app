@@ -40,6 +40,8 @@
   right: 140px;
   max-width: 564px;
   padding: 32px;
+  border-radius: 16px;
+  filter: drop-shadow(16px 16px 4px #8faecf);
 }
 
 .hero__title-modal {
