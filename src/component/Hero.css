@@ -61,6 +61,7 @@
 .hero__data {
   display: grid;
   grid-template-columns: repeat(2, 238px);
+  column-gap: 24px;
 }
 
 .hero__radio {
@@ -79,6 +80,7 @@
   margin: 0 18px 0 0;
   width: 31px;
   height: 31px;
+  background-color: red;
 }
 
 .hero__input-text {
@@ -88,15 +90,15 @@
 }
 
 .hero__input {
-  width: 238px;
+  width: 190px;
   height: 29px;
   border-color: #d8e2e7;
   border-radius: 12px;
-  margin-right: 24px;
   cursor: pointer;
   font-size: 24px;
   padding: 24px;
   color: black;
+  margin-bottom: 32px;
 }
 
 .hero__input:focus {
@@ -110,7 +112,6 @@
 }
 
 .hero__result {
-  margin-top: 32px;
   padding: 32px;
   background: linear-gradient(to right, #345ff6, #587dff);
   color: white;
