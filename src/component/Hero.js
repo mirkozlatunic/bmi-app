@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../assets/images/logo.svg";
 
 import "./Hero.css";
 
 const Hero = () => {
+  const [textValue, setTextValue] = useState("");
+  const [numberValue, setNumberValue] = useState("");
+
+  const textTypeHandler = (e) => {
+    if (!e.target.value.match(/\D/g)) setTextValue(e.target.value);
+  };
+
+  const numberTypeHandler = (e) => {
+    setNumberValue(e.target.value);
+  };
   return (
     <div className="hero__section">
       <div className="hero__section-left">
@@ -49,13 +59,21 @@ const Hero = () => {
             name="input"
             placeholder="0"
             className="hero__input"
+            maxLength={3}
+            value={textValue}
+            onChange={textTypeHandler}
           />
+          <p className="hero__input-uom-left">cm</p>
           <input
             type="text"
             name="input"
             placeholder="0"
             className="hero__input"
+            maxLength={3}
+            value={numberValue}
+            onChange={numberTypeHandler}
           />
+          <p className="hero__input-uom-right">kg</p>
           <div className="hero__result">
             <h2 className="hero__result-title">Welcome!</h2>
             <p className="hero__result-text">

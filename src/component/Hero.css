@@ -80,7 +80,10 @@
   margin: 0 18px 0 0;
   width: 31px;
   height: 31px;
-  background-color: red;
+}
+
+.hero__radio-button:checked {
+  background: red;
 }
 
 .hero__input-text {
@@ -104,6 +107,26 @@
 .hero__input:focus {
   border-color: blue;
   outline: none;
+}
+
+.hero__input-uom-left {
+  position: absolute;
+  margin: 0;
+  color: blue;
+  font-size: 24px;
+  font-weight: 600;
+  top: 201px;
+  left: 214px;
+}
+
+.hero__input-uom-right {
+  position: absolute;
+  margin: 0;
+  color: blue;
+  font-size: 24px;
+  font-weight: 600;
+  top: 201px;
+  right: 48px;
 }
 
 .hero__result-title {
