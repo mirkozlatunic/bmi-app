@@ -1,0 +1,42 @@
+.results__container {
+  padding: 0 140px 96px 140px;
+  display: flex;
+  justify-content: space-between;
+  font-family: inter;
+}
+
+.results__pic {
+  width: 564px;
+  height: 533px;
+  margin-top: 65px;
+}
+
+.results__right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.results__text {
+  width: 465px;
+}
+
+.results__curve-right {
+  width: 85px;
+}
+
+.results__title {
+  font-size: 48px;
+  font-weight: 600;
+  letter-spacing: -3px;
+  line-height: 110%;
+  color: #253347;
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+
+.results__para {
+  line-height: 150%;
+  margin: 0;
+  color: #5e6e85;
+}

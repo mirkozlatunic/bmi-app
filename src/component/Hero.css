@@ -1,5 +1,5 @@
 .hero__section {
-  margin: 0 140px 65px 24px;
+  margin: 0 140px 13px 24px;
   font-family: inter;
 }
 
@@ -59,14 +59,15 @@
 }
 
 .hero__data {
-  display: grid;
-  grid-template-columns: repeat(2, 238px);
-  column-gap: 24px;
+  display: flex;
+  flex-direction: column;
 }
 
 .hero__radio {
   font-size: 16px;
   font-weight: 600;
+  display: flex;
+  gap: 24px;
 }
 
 .hero__radio-label {
@@ -74,6 +75,8 @@
   align-items: center;
   margin-left: 0;
   margin-bottom: 32px;
+  cursor: pointer;
+  width: 238px;
 }
 
 .hero__radio-button {
@@ -82,8 +85,9 @@
   height: 31px;
 }
 
-.hero__radio-button:checked {
-  background: red;
+.hero__bmi {
+  display: flex;
+  gap: 24px;
 }
 
 .hero__input-text {
@@ -148,4 +152,128 @@
 .hero__result-text {
   font-size: 14px;
   margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .hero__section {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero__section-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 43px 326px 43px;
+    max-width: 100%;
+  }
+
+  .hero__logo {
+    width: 40x;
+    height: 40px;
+  }
+
+  .hero__title {
+    margin-top: 40px;
+    margin-bottom: 24px;
+    font-size: 40px;
+    text-align: center;
+  }
+
+  .hero__text {
+    text-align: center;
+  }
+
+  .hero__section-right {
+    position: relative;
+    right: 0;
+    top: -268px;
+    max-width: 686px;
+  }
+
+  .hero__radio-label {
+    width: 299px;
+  }
+
+  .hero__entry {
+    width: 299px;
+  }
+
+  .hero__input {
+    width: auto;
+  }
+
+  .hero__input-uom-left {
+    left: 276px;
+  }
+
+  .hero__result {
+    width: 558px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .hero__section-left {
+    padding: 32px 24px 217px 24px;
+  }
+
+  .hero__title {
+    margin-top: 24px;
+    font-size: 48px;
+  }
+
+  .hero__section-right {
+    max-width: 280px;
+    top: -169px;
+    padding: 24px;
+  }
+
+  .hero__data {
+    grid-template-columns: repeat(2, 128px);
+  }
+
+  .hero__radio {
+    width: 128px;
+  }
+
+  .hero__input-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .hero__bmi {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .hero__entry {
+    margin-bottom: 16px;
+  }
+
+  .hero__entry:last-child {
+    margin-bottom: 24px;
+  }
+
+  .hero__input {
+    width: 232px;
+    margin-bottom: 0;
+  }
+
+  .hero__input-uom-left {
+    left: 250px;
+  }
+
+  .hero__input-uom-right {
+    top: 318px;
+    right: 44px;
+  }
+
+  .hero__result {
+    width: 216px;
+    border-radius: 16px;
+  }
 }
