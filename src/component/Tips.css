@@ -53,9 +53,17 @@
   .tips__blocks {
     flex-direction: column;
     padding: 0;
+    gap: 40px;
   }
 
   .tips__block {
     width: auto;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .tips__title {
+    margin-top: 0;
   }
 }
