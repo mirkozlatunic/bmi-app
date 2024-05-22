@@ -18,6 +18,12 @@
 
 .tips__block {
   width: 365px;
+  gap: 24px;
+  margin-right: 24px;
+}
+
+.tips__block:last-child {
+  margin-right: 0;
 }
 
 .tips__icon {
@@ -61,6 +67,7 @@
     display: flex;
     gap: 40px;
     align-items: center;
+    margin-right: 0;
   }
 
   .tips__title {
