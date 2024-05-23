@@ -2,10 +2,13 @@
   padding: 120px 140px;
   font-family: inter;
   display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
 }
 
 .limitation__block {
   max-width: 564px;
+  margin-right: 100px;
 }
 
 .limitation__title {
@@ -25,6 +28,7 @@
 }
 
 .limiation_line-right {
-  margin-top: 67px;
+  position: absolute;
+  margin-top: 251px;
   margin-left: 165px;
 }
