@@ -62,3 +62,10 @@
     display: none;
   }
 }
+
+@media screen and (max-width: 375px) {
+  .limitation__container {
+    padding: 72px 29px 96px 19px;
+    row-gap: 16px;
+  }
+}
