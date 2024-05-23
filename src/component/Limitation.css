@@ -32,3 +32,33 @@
   margin-top: 251px;
   margin-left: 165px;
 }
+
+@media screen and (max-width: 768px) {
+  .limitation__container {
+    padding: 96px 40px;
+    justify-content: center;
+    gap: 15px;
+    row-gap: 24px;
+  }
+
+  .limitation__block {
+    margin-right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 686px;
+    margin-bottom: 40px;
+  }
+
+  .limitation__title {
+    font-size: 32px;
+  }
+
+  .limitation__text {
+    text-align: center;
+  }
+
+  .limiation_line-right {
+    display: none;
+  }
+}

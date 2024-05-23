@@ -45,3 +45,22 @@
   margin: 0;
   color: #5e6e85;
 }
+
+@media screen and (max-width: 768px) {
+  .card__container {
+    max-width: 271px;
+  }
+
+  .card__container:nth-child(4) {
+    height: 168px;
+    margin-left: 0;
+  }
+
+  .card__container:nth-child(5) {
+    height: 168px;
+  }
+
+  .card__container:nth-child(6) {
+    margin-left: 0;
+  }
+}
