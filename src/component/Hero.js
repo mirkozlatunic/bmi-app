@@ -10,6 +10,7 @@ const Hero = () => {
   const [weightValue, setWeightValue] = useState("");
   const [bmiValue, setBmiValue] = useState("");
   const [bmiMessage, setBmiMessage] = useState("");
+  const [selectedView, setSelectedView] = useState("metric");
 
   const textTypeHandler = (e) => {
     if (!e.target.value.match(/\D/g)) setTextValue(e.target.value);
@@ -43,6 +44,10 @@ const Hero = () => {
     }
   };
 
+  const metricHandler = (event) => {
+    setSelectedView(event.target.value);
+  };
+
   return (
     <div className="hero__section">
       <div className="hero__section-left">
@@ -67,7 +72,7 @@ const Hero = () => {
                 type="radio"
                 name="selection"
                 className="hero__radio-button"
-                defaultChecked
+                onChange={metricHandler}
               />
               Metric
             </label>
@@ -76,40 +81,46 @@ const Hero = () => {
                 type="radio"
                 name="selection"
                 className="hero__radio-button"
+                onChange={metricHandler}
               />
               Imperial
             </label>
           </div>
-          <div className="hero__bmi">
-            <div className="hero__entry">
-              <div className="hero__input-text">Height</div>
-              <input
-                type="text"
-                name="input"
-                placeholder="0"
-                className="hero__input"
-                maxLength={3}
-                value={textValue}
-                onChange={textTypeHandler}
-                height={heightValue}
-              />
-              <p className="hero__input-uom-left">cm</p>
+          {selectedView === "metric" ? (
+            <div className="hero__bmi">
+              <div className="hero__entry">
+                <div className="hero__input-text">Height</div>
+                <input
+                  type="text"
+                  name="input"
+                  placeholder="0"
+                  className="hero__input"
+                  maxLength={3}
+                  value={textValue}
+                  onChange={textTypeHandler}
+                  height={heightValue}
+                />
+                <p className="hero__input-uom-left">cm</p>
+              </div>
+              <div className="hero__entry">
+                <div className="hero__input-text">Weight</div>
+                <input
+                  type="text"
+                  name="input"
+                  placeholder="0"
+                  className="hero__input"
+                  maxLength={3}
+                  value={numberValue}
+                  onChange={numberTypeHandler}
+                  weight={weightValue}
+                />
+                <p className="hero__input-uom-right">kg</p>
+              </div>
             </div>
-            <div className="hero__entry">
-              <div className="hero__input-text">Weight</div>
-              <input
-                type="text"
-                name="input"
-                placeholder="0"
-                className="hero__input"
-                maxLength={3}
-                value={numberValue}
-                onChange={numberTypeHandler}
-                weight={weightValue}
-              />
-              <p className="hero__input-uom-right">kg</p>
-            </div>
-          </div>
+          ) : (
+            <div>super good</div>
+          )}
+
           <div className="hero__result">
             <h2 className="hero__result-title">Welcome!</h2>
             <p className="hero__result-text">
