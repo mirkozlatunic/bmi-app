@@ -6,10 +6,6 @@ import "./Hero.css";
 const Hero = () => {
   const [textValue, setTextValue] = useState("");
   const [numberValue, setNumberValue] = useState("");
-  const [heightValue, setHeightValue] = useState("");
-  const [weightValue, setWeightValue] = useState("");
-  const [bmiValue, setBmiValue] = useState("");
-  const [bmiMessage, setBmiMessage] = useState("");
   const [selectedView, setSelectedView] = useState("metric");
 
   const textTypeHandler = (e) => {
@@ -18,30 +14,6 @@ const Hero = () => {
 
   const numberTypeHandler = (e) => {
     setNumberValue(e.target.value);
-  };
-
-  const calculateBmi = () => {
-    if (heightValue && weightValue) {
-      const heightInMeters = heightValue / 100;
-      const bmi = weightValue(heightInMeters * heightInMeters).toFixed(2);
-      setBmiValue(bmi);
-
-      let message =
-        "Enter your height and weight and you’ll see your BMI result here";
-      if (bmi < 18.5) {
-        message = `${"Your BMI suggests you’re a underweight. Your ideal weight is between 63.3kgs - 85.2kgs."}`;
-      } else if (bmi >= 18.5 && bmi < 24.9) {
-        message = `${"Your BMI suggests you’re a healthy weight. Your ideal weight is between 63.3kgs - 85.2kgs."}`;
-      } else if (bmi >= 24.0 && bmi < 29.9) {
-        message = `${"Your BMI suggests you’re a overweight. Your ideal weight is between 63.3kgs - 85.2kgs."}`;
-      } else {
-        message = `${"Your BMI suggests you’re a obese. Your ideal weight is between 63.3kgs - 85.2kgs."}`;
-      }
-      setBmiMessage(message);
-    } else {
-      setBmiValue("");
-      setBmiMessage("");
-    }
   };
 
   const metricHandler = (event) => {
@@ -72,6 +44,7 @@ const Hero = () => {
                 type="radio"
                 name="selection"
                 className="hero__radio-button"
+                defaultChecked
                 onChange={metricHandler}
               />
               Metric
@@ -98,7 +71,6 @@ const Hero = () => {
                   maxLength={3}
                   value={textValue}
                   onChange={textTypeHandler}
-                  height={heightValue}
                 />
                 <p className="hero__input-uom-left">cm</p>
               </div>
@@ -112,13 +84,65 @@ const Hero = () => {
                   maxLength={3}
                   value={numberValue}
                   onChange={numberTypeHandler}
-                  weight={weightValue}
                 />
                 <p className="hero__input-uom-right">kg</p>
               </div>
             </div>
           ) : (
-            <div>super good</div>
+            <div className="hero__bmi-imperial">
+              <div className="hero__entry">
+                <div className="hero__input-text">Height</div>
+                <input
+                  type="text"
+                  name="input"
+                  placeholder="0"
+                  className="hero__input"
+                  maxLength={2}
+                  value={textValue}
+                  onChange={textTypeHandler}
+                />
+                <p className="hero__input-uom-left">ft</p>
+              </div>
+              <div className="hero__entry">
+                <div className="hero__input-text"></div>
+                <input
+                  type="text"
+                  name="input"
+                  placeholder="0"
+                  className="hero__input"
+                  maxLength={2}
+                  value={numberValue}
+                  onChange={numberTypeHandler}
+                />
+                <p className="hero__input-uom-right">in</p>
+              </div>
+              <div className="hero__entry">
+                <div className="hero__input-text">Weight</div>
+                <input
+                  type="text"
+                  name="input"
+                  placeholder="0"
+                  className="hero__input"
+                  maxLength={2}
+                  value={textValue}
+                  onChange={textTypeHandler}
+                />
+                <p className="hero__input-uom-left">ft</p>
+              </div>
+              <div className="hero__entry">
+                <div className="hero__input-text"></div>
+                <input
+                  type="text"
+                  name="input"
+                  placeholder="0"
+                  className="hero__input"
+                  maxLength={2}
+                  value={numberValue}
+                  onChange={numberTypeHandler}
+                />
+                <p className="hero__input-uom-right">in</p>
+              </div>
+            </div>
           )}
 
           <div className="hero__result">
